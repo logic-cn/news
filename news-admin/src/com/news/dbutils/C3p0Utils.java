@@ -13,14 +13,6 @@ public class C3p0Utils {
 		ComboPooledDataSource comboPooledDataSource = new ComboPooledDataSource("mysql");
 		ds = comboPooledDataSource;
 	}
-/*	public static void main(String[] args) {
-		try {
-			System.out.println(ds.getConnection());
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}*/
 	public static Connection getConnection(){
 		try {
 			return ds.getConnection();

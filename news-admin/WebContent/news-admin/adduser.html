@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+</head>
+<body>
+	<h1 style="text-align: center;">新增用户</h1>
+	<form action="/news-admin/UserServlet" method="post">
+		<div style="text-align: center;">
+			<hr>
+			<label><span style="color: red;">*</span>用户名：</label><input type="text" name="username"/><br/><br/>
+			<label><span style="color: red;">*</span>密&nbsp;&nbsp;&nbsp;码：</label><input type="password" name="password"/><br/><br/>
+			<label><span style="color: red;">*</span>邮&nbsp;&nbsp;&nbsp;箱：<input type="email" name="email"><br/><br/></label>
+			<label><span style="color: red;">*</span>新增时间：<input type="date" name="date"><br/><br/></label>
+			
+			<hr>
+			<input type="submit" value="确认添加">
+		</div>
+	</form>
+</body>
+</html>
