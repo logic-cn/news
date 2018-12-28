@@ -9,7 +9,7 @@
 </head>
 <body>
 	<center>
-		<form action="UpdateAdminServlet" method="post">
+		<form action="../UpdateAdminServlet" method="post">
 			<input type="hidden" name="id" value="${admin_list.id }"><br/>
 			用户名：<input type="text" name="username" value="${admin_list.username }"><br/>
 			密码：<input type="password" name="password" value="${admin_list.password }"><br/>

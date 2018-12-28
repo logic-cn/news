@@ -34,7 +34,7 @@
 					<td>${news.getState()}</td>
 					<td>${news.getCreate_date()}</td>
 					<td>${news.getUpdate_date()}</td>
-					<td><a href="DeleteNewsServlet?id=${news.getId()}">删除</a>&nbsp;<a href="UpdateNewsServlet?id=${news.getId()}">编辑</a>
+					<td><a href="../DeleteNewsServlet?id=${news.getId()}">删除</a>&nbsp;<a href="../UpdateNewsServlet?id=${news.getId()}">编辑</a>
 				</tr>
 			</c:forEach>
 			
