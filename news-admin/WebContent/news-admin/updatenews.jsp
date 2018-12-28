@@ -9,7 +9,7 @@
 </head>
 <hr size="9" color="red" noshade>
 <body background="img/skin_/beijing.jpg">
-	<form action="NewsUpdateServlet" method="post">
+	<form action="../NewsUpdateServlet" method="post">
 		<h3 align="center">新闻修改页面</h3>
 		<table align="center">
 

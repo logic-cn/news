@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : call
+Source Server         : Test
 Source Server Version : 50610
 Source Host           : localhost:3306
 Source Database       : news
@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50610
 File Encoding         : 65001
 
-Date: 2018-12-28 21:10:58
+Date: 2018-12-28 22:05:55
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -75,12 +75,18 @@ CREATE TABLE `news` (
   `update_date` date DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `category_id` (`category_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of news
 -- ----------------------------
 INSERT INTO `news` VALUES ('1', '2', '习近平就印度尼西亚', '习近平就印度尼西亚巽他海峡海啸灾害向印尼总统致慰问电', '1', '2018-12-24', '2018-12-24');
+INSERT INTO `news` VALUES ('2', '5', '红旗首款纯电动SUV', '红旗E-HS3正式下线，定位于红旗品牌旗下入门级电动SUV产品。', '1', '2018-12-28', '2018-12-28');
+INSERT INTO `news` VALUES ('3', '5', '大众全新速腾消息', '一汽-大众全新速腾将于2019年3月份正式上市。', '1', '2018-12-28', '2018-12-28');
+INSERT INTO `news` VALUES ('4', '2', '岁末年初 牢', '锐意进取', '1', '2018-12-28', '2018-12-28');
+INSERT INTO `news` VALUES ('6', '8', '“热”就一个字！上海记者亲身体验“权健火疗”', '“热”就一个字！上海记者亲身体验“权健火疗”', '1', '2018-12-28', '2018-12-28');
+INSERT INTO `news` VALUES ('7', '8', '吴昕对阔腿疯不怕漏风吗？', '大冬天的就不怕漏风吗？', '1', '2018-12-28', '2018-12-28');
+INSERT INTO `news` VALUES ('9', '9', '创业犯错样本，ofo的2018 | 搜狐科技年终盘点', '创业犯错样本，ofo的2018 | 搜狐科技年终盘点', '1', '2018-12-28', '2018-12-28');
 
 -- ----------------------------
 -- Table structure for `user`
