@@ -1,7 +1,6 @@
 package com.news.servlet;
 
 import java.io.IOException;
-import java.sql.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,21 +9,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.news.convertor.StringToSqlDate;
-import com.news.dao.UserDao;
-import com.news.pojo.User;
+import com.news.dao.AdminDao;
+import com.news.pojo.AdminUser;
 
 /**
- * Servlet implementation class UserServlet
+ * Servlet implementation class UpdateAdminServlet
  */
-@WebServlet("/UserServlet")
-public class UserServlet extends HttpServlet {
+@WebServlet("/UpdateAdminServlet")
+public class UpdateAdminServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+       
     /**
-     * Default constructor. 
+     * @see HttpServlet#HttpServlet()
      */
-    public UserServlet() {
+    public UpdateAdminServlet() {
+        super();
         // TODO Auto-generated constructor stub
     }
 
@@ -42,26 +41,18 @@ public class UserServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
-		User user = new User();
-		StringToSqlDate stringToSqlDate = new StringToSqlDate();
+		String id = request.getParameter("id");
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-		String email = request.getParameter("email");
-		String create_date = request.getParameter("date");
-		Date date = stringToSqlDate.getStringToSqlDate(create_date);
-		user.setName(username);
-		user.setPassword(password);
-		user.setEmail(email);
-		user.setState(1);			
-		user.setCreate_date(date);
-		
-		UserDao userDao = new UserDao();
-		int insertUser = userDao.insertUser(user);
-		if (insertUser != 0) {
-			String msg = "success";
-			HttpSession session = request.getSession();
-			session.setAttribute("code", msg);
-			response.sendRedirect("news-admin/msg.jsp");
+		int admin_id = Integer.parseInt(id);
+		AdminUser adminUser = new AdminUser();
+		adminUser.setId(admin_id);
+		adminUser.setUsername(username);
+		adminUser.setPassword(password);
+		AdminDao adminDao = new AdminDao();
+		int admin = adminDao.updateAdmin(adminUser);
+		if (admin != 0) {
+			response.sendRedirect("news-admin/admintable.jsp");
 		}else {
 			String msg = "error";
 			HttpSession session = request.getSession();

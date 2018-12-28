@@ -1,0 +1,105 @@
+<!doctype html>
+
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html;charset=utf-8">
+
+<title>新闻搜索</title>
+     
+     <style type="text/css">
+         .ui{
+             width:1300px;
+             height:50px;
+             list-style: none;
+             margin:0;
+             padding:0;
+              }
+         .ui li{
+             width:70px;
+             display: inline-block;
+             margin:0 10px;
+         }
+ 
+         .ui li a{
+             width:70px;
+             height:50px;
+             padding:0 20px;
+             font-size: 12px;
+             line-height:50px;
+             background: ;
+             display: inline-block;
+         }
+         #rr,#re{
+             float: right;
+         }
+ 
+     </style>
+</head>
+
+<body style="padding-top: 50px;">
+	<div id="headerwrapper">
+
+		<div id="header" alog-group="header" alog-alias="hunter-header-start">
+
+		<form action="../TitleSearchServlet" method="post">
+			<table class="sbox" id="sbox" alog-group="search-box">
+		     <tr>
+			  <td class="logo">
+			   <div class="logo" style="padding-bottom: 90px;">
+			    <a href=""> <!--[if !IE]><!-->
+				 <img src="../img/skin_/newssearch.png" alt="新闻" height="66px" width="137px">
+				</a>
+			   </div>						
+			 </td>
+	                  <td class="search">
+						<table>
+							<tr>
+								<td class="box"><div id="sugarea">
+										<span class="s_ipt_wr" id="s_ipt_wr">
+										<input class="word" id="ww" name="word" size="45" maxlength="100"
+											tabindex="1"></span><span class="s_btn_wr">
+											<input class="btn" id="s_btn_wr" type="submit" value="搜索" 
+											onmousedown="this.className='btn s_btn_h'"
+											onmouseout="this.className='btn'">
+										</span>
+									</div></td>
+								<td class="help"><a
+									href="datesearch.html">日期搜索</a></td>
+							</tr>
+						</table>
+						
+						<p class="search-radios">
+							<input type="radio" name="tn" value="news" checked="checked" id="news"> 
+							<label for="news" class="checked">新闻全文</label>
+							<input type="radio" name="tn" value="newstitle" id="newstitle">
+							<label for="newstitle" class="not-checked">新闻标题</label>
+						</p> 
+						<input type="hidden" name="from" id="from" value="news">
+						<input type="hidden" name="cl" id="cl" value="2"> 
+						<input type="hidden" name="rn" id="rn" value="20"> 
+						<input type="hidden" name="ct" id="ct" value="1">
+						
+					</td>
+				</tr>
+			</table>
+		</form>
+		</div>
+
+		<div class="menu-list">
+			<ul class="ui">
+				<li><a href="../CategorySearchServlet?categoryId=1">时政</a></li>
+				<li><a href="../CategorySearchServlet?categoryId=2">国际</a></li>
+				<li><a href="../CategorySearchServlet?categoryId=3">军事</a></li>
+				<li><a href="../CategorySearchServlet?categoryId=4">公益</a></li>
+				<li><a href="../CategorySearchServlet?categoryId=5">汽车</a></li>
+				<li><a href="../CategorySearchServlet?categoryId=6">房产</a></li>
+				<li><a href="../CategorySearchServlet?categoryId=7">教育</a></li>
+				<li><a href="../CategorySearchServlet?categoryId=8">时尚</a></li>
+				<li><a href="../CategorySearchServlet?categoryId=9">科技</a></li>
+				<li><a href="../CategorySearchServlet?categoryId=10">娱乐</a></li>
+			</ul>
+		</div>
+</div>
+		
+</body>
+</html>

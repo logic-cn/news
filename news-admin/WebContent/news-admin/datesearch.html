@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>日期搜索</title>
+</head>
+<body>
+                                </tr>
+                                <tr bgcolor="#FFFFFF"></tr>
+                                <tr bgcolor="#FFFFFF">
+                                    <td>
+                                        <table cellspacing="0" cellpadding="2" width="100%">
+                                            <tbody>
+                                            <tr>
+                                                <td width="16%" height="35" class="padl10"><b>时间</b></td>
+
+                                                <td>
+                                                    <p>限定要搜索的新闻的时间是</p></td>
+                                                <td>
+                                                    <input type="radio" name="s" value="1" checked="">
+                                                    <!--hour-->
+                                                    <select name="mt" onchange="changeRadio(1);">
+                                                        <option value="0" selected="">全部时间</option>
+                                                        <!--<option value=1>最近一小时</option>-->
+                                                        <option value="24">最近一天</option>
+                                                        <option value="168">最近一周</option>
+                                                        <option value="720">最近一月</option>
+                                                        <option value="8640">最近一年</option>
+                                                    </select>
+                                                    <input type="hidden" name="lm">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td height="35">　</td>
+                                                <td>　</td>
+                                                <td>
+                                                    <!--second-->
+                                                    <input type="radio" name="s" value="2">
+                                                     或
+                                                    <input name="begin_date" type="text" size="9" value="2005-1-1"
+                                                           id="begin_date" onchange="changeRadio(2);"
+                                                           onclick="return showCalendar('begin_date', 'y-m-d');">
+                                                    <nobr>到 <input name="end_date" type="text" size="9" value="2006-1-1"
+                                                                   id="end_date" onchange="changeRadio(2);"
+                                                                   onclick="return showCalendar('end_date', 'y-m-d');">
+                                                    </nobr>
+                                                </td>
+                                            </tr>
+                                            <tr bgcolor="#ffffff">
+                                                <td colspan="3">
+                                                    <hr size="1" color="#c9d7f1">
+                                                </td>
+                                            </tr>
+                                            <td>
+                                            <input name="submit" type="submit" id="submit" value="搜索">
+                                            </td>
+</body>
+</html>

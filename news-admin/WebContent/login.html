@@ -7,7 +7,7 @@
 <link rel="stylesheet" type="text/css" href="css/skin_/login.css" />
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/jquery.select.js"></script>
-<title>蓝色企业数字办公后台管理模板_用户登录</title>
+<title>新闻发布后台管理系统_用户登录</title>
 </head>
 
 <body>
@@ -17,36 +17,29 @@
         	<div class="login-box">
                 <div id="logo"></div>
                 <h1></h1>
-                <div class="input username" id="username">
-                    <label for="userName">用户名</label>
-                    <span></span>
-                    <input type="text" id="userName" />
-                </div>
-                <div class="input psw" id="psw">
-                    <label for="password">密&nbsp;&nbsp;&nbsp;&nbsp;码</label>
-                    <span></span>
-                    <input type="password" id="password" />
-                </div>
-                <div class="input validate" id="validate">
-                    <label for="valiDate">验证码</label>
-                    <input type="text" id="valiDate" />
-                    <div class="value">X3D5</div>
-                </div>
-                <div class="styleArea">
-                    <div class="styleWrap">
-                        <select name="style">
-                            <option value="默认风格">默认风格</option>
-                            <option value="红色风格">红色风格</option>
-                            <option value="绿色风格">绿色风格</option>
-                        </select>
-                    </div>
-                </div>
-                <div id="btn" class="loginButton">
-                    <input type="button" class="button" value="登录"  />
-                </div>
+                <form action="LoginServlet" method="post">
+                	<div class="input username" id="username">
+                   	 	<label for="userName">用户名</label>
+                   	 	<span></span>
+                   		<input type="text" id="userName" name="userName" value="admin"/>
+                	</div>
+                	<div class="input psw" id="psw">
+                    	<label for="password">密&nbsp;&nbsp;&nbsp;&nbsp;码</label>
+                    	<span></span>
+                    	<input type="password" id="password" name="password" value="admin"/>
+                	</div>
+                	<div class="input validate" id="validate">
+                    	<label for="valiDate">验证码</label>
+                    	<input type="text" id="valiDate" name="valiDate"/>
+                    	<div class="value"><img src="CheckServlet"/></div>
+                	</div>
+                	<div id="btn" class="loginButton">
+                    	<input type="submit" class="button" value="登录"  />
+                	</div>
+                </form>
             </div>
         </div>
-        <div id="ft">CopyRight&nbsp;2014&nbsp;&nbsp;版权所有&nbsp;&nbsp;More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a> &nbsp;&nbsp;</div>
+        <div id="ft">CopyRight&nbsp;2014&nbsp;&nbsp;版权所有&nbsp;&nbsp;More Templates <a href="#" target="_blank" title="cmy">cmy</a> - Collect from <a href="#" title="cmy" target="_blank">cmy</a> &nbsp;&nbsp;</div>
     </div>
    
 </div>
@@ -65,9 +58,9 @@
     });
 	$('select').select();
 	
-	$('.loginButton').click(function(e) {
-        document.location.href = "main.html";
-    });
+	/* $('.loginButton').click(function(e) {
+        document.location.href = "news-admin/main.html";
+    }); */
 </script>
 
 </html>

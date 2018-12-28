@@ -1,6 +1,8 @@
 package com.news.pojo;
 
-public class AdminUser {
+import java.io.Serializable;
+
+public class AdminUser implements Serializable{
 
 	private int id;
 	private String username;
@@ -20,6 +22,10 @@ public class AdminUser {
 	}
 	public String getPassword() {
 		return password;
+	}
+	@Override
+	public String toString() {
+		return "AdminUser [id=" + id + ", username=" + username + ", password=" + password + ", state=" + state + "]";
 	}
 	public void setPassword(String password) {
 		this.password = password;

@@ -1,7 +1,6 @@
 package com.news.servlet;
 
 import java.io.IOException;
-import java.sql.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,21 +9,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.news.convertor.StringToSqlDate;
-import com.news.dao.UserDao;
-import com.news.pojo.User;
+import com.news.dao.CategoryDao;
+import com.news.pojo.Category;
 
 /**
- * Servlet implementation class UserServlet
+ * Servlet implementation class ReviseServlet
  */
-@WebServlet("/UserServlet")
-public class UserServlet extends HttpServlet {
+@WebServlet("/ReviseServlet")
+public class ReviseServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+       
     /**
-     * Default constructor. 
+     * @see HttpServlet#HttpServlet()
      */
-    public UserServlet() {
+    public ReviseServlet() {
+        super();
         // TODO Auto-generated constructor stub
     }
 
@@ -33,7 +32,7 @@ public class UserServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
@@ -42,32 +41,24 @@ public class UserServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
-		User user = new User();
-		StringToSqlDate stringToSqlDate = new StringToSqlDate();
-		String username = request.getParameter("username");
-		String password = request.getParameter("password");
-		String email = request.getParameter("email");
-		String create_date = request.getParameter("date");
-		Date date = stringToSqlDate.getStringToSqlDate(create_date);
-		user.setName(username);
-		user.setPassword(password);
-		user.setEmail(email);
-		user.setState(1);			
-		user.setCreate_date(date);
-		
-		UserDao userDao = new UserDao();
-		int insertUser = userDao.insertUser(user);
-		if (insertUser != 0) {
-			String msg = "success";
-			HttpSession session = request.getSession();
-			session.setAttribute("code", msg);
-			response.sendRedirect("news-admin/msg.jsp");
+		request.setCharacterEncoding("utf-8");
+		String id=request.getParameter("id");
+		String name=request.getParameter("name");
+		int category_id=Integer.parseInt(id);
+		Category category=new Category();
+		category.setId(category_id);
+		category.setName(name);
+		CategoryDao categoryDao=new CategoryDao();
+		int updateCategory = categoryDao.updateCategory(category);
+		if (updateCategory != 0) {
+			response.sendRedirect("news-admin/categorytable.jsp");
 		}else {
 			String msg = "error";
 			HttpSession session = request.getSession();
 			session.setAttribute("code", msg);
 			response.sendRedirect("news-admin/msg.jsp");
 		}
+		
 	}
 
 }
