@@ -7,9 +7,9 @@
 
 登录页：
 
-![20181228213834](C:\Users\Administrator\Desktop\sql\20181228213834.png)
+![20181228213834](https://raw.githubusercontent.com/Contacted/news/master/img-folder/20181228213834.png)
 
 后台管理页：
 
-![20181228213944](C:\Users\Administrator\Desktop\sql\20181228213944.png)
+![20181228213944](https://github.com/Contacted/news/blob/master/img-folder/20181228213944.png)
 
