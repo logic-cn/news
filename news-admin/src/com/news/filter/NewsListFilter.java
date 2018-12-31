@@ -24,7 +24,7 @@ import com.news.pojo.News;
 /**
  * Servlet Filter implementation class NewsListFilter
  */
-@WebFilter(filterName="/NewsListFilter" ,urlPatterns={"/news-admin/show.jsp", "/news-admin/deletenews.jsp"})
+@WebFilter(filterName="/NewsListFilter" ,urlPatterns={"/news-admin/show.jsp", "/news-admin/deletenews.jsp", "/home.jsp"})
 public class NewsListFilter implements Filter {
 
     /**

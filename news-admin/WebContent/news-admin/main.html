@@ -64,54 +64,7 @@ $(window).resize(function(e) {
 			}
 		}
     });
-	
-	
-	
-	$.each($('.skin-opt li'),function(index, element){
-		if((index + 1) % 3 == 0){
-			$(this).addClass('third');	
-		}
-		$(this).css('background',$(this).attr('attr-color'));
-	});
-	
-	$('.setting-skin').click(function(e) {
-        $('.skin-opt').show();
-    });
-	
-	$('.skin-opt').click(function(e) {
-        if($(e.target).is('li')){
-			alert($(e.target).attr('attr-color'));	
-		}
-    });
-	
-	/* $('.hd-top .user-info .more-info').click(function(e) {
-       $(this).toggleClass('active'); 
-	   $('.user-opt').toggle();
-    }); */
-	
-	$('.logo-icon').click(function(e) {
-         $(this).toggleClass('active'); 
-	     $('.system-switch').toggle();
-    });
-	
-	hideElement($('.user-opt'), $('.more-info'), function(current, target){
-
-		$('.more-info').removeClass('active'); 
-	});
-	
-	hideElement($('.skin-opt'), $('.switch-bar'));
-	
-	hideElement($('.system-switch'), $('.logo-icon'), function(current, target){
-
-		$('.logo-icon').removeClass('active'); 
-	});
-	
-	
-	
 })();
 
-	
-
 </script>
-
 </html>

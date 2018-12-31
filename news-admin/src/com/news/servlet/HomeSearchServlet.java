@@ -14,16 +14,16 @@ import com.news.dao.SearchDao;
 import com.news.pojo.News;
 
 /**
- * Servlet implementation class CategorySearchServlet
+ * Servlet implementation class HomeSearchServlet
  */
-@WebServlet("/CategorySearchServlet")
-public class CategorySearchServlet extends HttpServlet {
+@WebServlet("/HomeSearchServlet")
+public class HomeSearchServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CategorySearchServlet() {
+    public HomeSearchServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,21 +33,7 @@ public class CategorySearchServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		String categoryId = request.getParameter("categoryId");
-		int id = Integer.parseInt(categoryId);
-		SearchDao searchDao = new SearchDao();
-		ArrayList<News> list = searchDao.SearchNewsByCategoryId(id);
-		if (list != null) {
-			HttpSession session = request.getSession();
-			session.setAttribute("SearchResult", list);
-			response.sendRedirect("searchresult.jsp");
-		}else {
-			String msg = "error";
-			HttpSession session = request.getSession();
-			session.setAttribute("code", msg);
-			response.sendRedirect("news-admin/msg.jsp");
-		}
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
@@ -55,7 +41,15 @@ public class CategorySearchServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		//doGet(request, response);
+		request.setCharacterEncoding("UTF-8");
+		String search_text = request.getParameter("text");
+		SearchDao searchDao = new SearchDao();
+		ArrayList<News> news = searchDao.SearchNewsByContent(search_text);
+		HttpSession session = request.getSession();
+		session.setAttribute("SearchResult", news);
+		response.sendRedirect("searchresult.jsp");
+		System.out.println(search_text);
 	}
 
 }

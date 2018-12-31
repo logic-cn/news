@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>用户注册</title>
+
+<style>
+body, div, h1, form, fieldset, input, textarea {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+}
+html {
+    height: 100%;
+}
+body {
+    font-family: 宋体;
+    margin-bottom:20px;
+    padding-bottom:40px;
+  	background-image: url("./home_files/timg2.jpg");
+}
+#container {
+    width: 430px;
+    margin: 30px auto;
+    padding: 60px 30px;
+    background: #ffffff;
+    border: 1px solid #e1e1e1;
+}
+h1 {
+    font-size: 35px;
+    color: #445668;
+    text-align: center;
+    margin: 0 0 35px 0;
+    text-shadow: 0px 2px 0px #f2f2f2;
+}
+label {
+    float: left;
+    clear: left;
+    margin: 11px 20px 0 0;
+    width: 95px;
+    text-align: right;
+    font-size: 18px;
+    font-family:宋体;
+    color: #000E00;
+    text-shadow: 0px 1px 0px #f2f2f2;
+}
+input {
+    width: 210px;
+    height: 35px;
+    padding: 5px 20px 0px 20px;
+    margin: 0 0 20px 0;
+    background: #B0E0E6;
+    border-radius: 5px;
+    font-family: 宋体, sans-serif;
+    font-size: 16px;
+    color: #000000;
+    text-shadow: 0px -1px 0px #ffffff;
+}
+textarea {
+    width: 210px;
+    height: 170px;
+    padding: 12px 20px 0px 20px;
+    margin: 0 0 20px 0;
+    background: #5E768D;
+    font-family: 宋体, sans-serif;
+    font-size: 16px;
+    color: #000E00;
+    text-shadow: 0px -1px 0px #000E00;
+}
+textarea {
+    color: #AFEEEE;
+    text-shadow: 0px -1px 0px #38506b;
+}
+input:focus, textarea:focus {
+    background: #FFFAFA;
+}
+p {
+    margin-left:140px;
+}
+input[type=submit],input[type=reset]{
+    width: 105px;
+    height: 42px;
+    border: 1px solid #000E00;
+    cursor: pointer;
+    color:#000E00;
+}
+</style>
+
+</head>
+
+<body>
+<div id="container">
+    <h1>用户注册</h1>
+    <form action="UserRegistServlet" method="post">
+        <fieldset>
+            <label for="name">用户名:</label>
+            <input type="text" id="username" placeholder="输入你的用户名" name="username"/>
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email address" name="email"/>
+            <label for="password">密码:</label>
+            <input type="password" id="password" placeholder="输入密码" name="password"/>
+            <label for="password">重复密码:</label>
+            <input type="password" id="password" placeholder="再次输入密码" />
+            <label for="date">注册时间:</label>
+            <input type="date" id="date" name="date"/>
+            <p>
+                <input type="reset" value="重新填写" />
+                <input type="submit" value="注 册" />
+            </p>
+        </fieldset>
+    </form>
+</div>
+</body>
+</html>
+
+

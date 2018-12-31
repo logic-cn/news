@@ -2,6 +2,7 @@ package com.news.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.Statement;
 
 import com.news.dbutils.C3p0Utils;
@@ -50,5 +51,23 @@ public class UserDao {
 			// TODO: handle exception
 		}
 		return 0;
+	}
+	public User selectUserByUser(User user){
+		try {
+			Connection connection = C3p0Utils.getConnection();
+			Statement statement = connection.createStatement();
+			String sql = "select * from user where user_name = '" + user.getName() + "' and password = '" + user.getPassword() + "'";
+			ResultSet executeQuery = statement.executeQuery(sql);
+			if (executeQuery.next()) {
+				User user2 = new User();
+				String user_name = executeQuery.getString("user_name");
+				user2.setName(user_name);
+				return user2;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+		
 	}
 }

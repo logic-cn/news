@@ -11,7 +11,7 @@
 <h3 align="center">新闻删除</h3>
 
 	<form action="#" method="post" >
-		<table border="1" cellspacing="2" bgcolor="#87CEEB" >
+		<table border="1" cellspacing="2" bgcolor="#ADD8E6" >
 			<tr align="center">
 			    <td width="40"> </td>
 				<td width="100">新闻ID</td>

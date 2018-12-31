@@ -1,7 +1,6 @@
 package com.news.servlet;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,20 +9,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.news.dao.SearchDao;
-import com.news.pojo.News;
+import com.news.dao.UserDao;
+import com.news.pojo.User;
 
 /**
- * Servlet implementation class CategorySearchServlet
+ * Servlet implementation class UserLoginServlet
  */
-@WebServlet("/CategorySearchServlet")
-public class CategorySearchServlet extends HttpServlet {
+@WebServlet("/UserLoginServlet")
+public class UserLoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CategorySearchServlet() {
+    public UserLoginServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,21 +32,7 @@ public class CategorySearchServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		String categoryId = request.getParameter("categoryId");
-		int id = Integer.parseInt(categoryId);
-		SearchDao searchDao = new SearchDao();
-		ArrayList<News> list = searchDao.SearchNewsByCategoryId(id);
-		if (list != null) {
-			HttpSession session = request.getSession();
-			session.setAttribute("SearchResult", list);
-			response.sendRedirect("searchresult.jsp");
-		}else {
-			String msg = "error";
-			HttpSession session = request.getSession();
-			session.setAttribute("code", msg);
-			response.sendRedirect("news-admin/msg.jsp");
-		}
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
@@ -55,7 +40,22 @@ public class CategorySearchServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		//doGet(request, response);
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		User user = new User();
+		user.setName(username);
+		user.setPassword(password);
+		UserDao userDao = new UserDao();
+		User selectUserByUser = userDao.selectUserByUser(user);
+		if (selectUserByUser != null) {
+			HttpSession session = request.getSession();
+			session.setAttribute("user_login", selectUserByUser);
+			response.sendRedirect("home.jsp");
+		}else {
+			response.sendRedirect("home.jsp");
+		}
+		
 	}
 
 }

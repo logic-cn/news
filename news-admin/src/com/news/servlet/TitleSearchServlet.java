@@ -41,14 +41,14 @@ public class TitleSearchServlet extends HttpServlet {
 			ArrayList<News> news = searchDao.SearchNewsByContent(search_content);
 			HttpSession session = request.getSession();
 			session.setAttribute("SearchResult", news);
-			response.sendRedirect("news-admin/searchresult.jsp");
+			response.sendRedirect("searchresult.jsp");
 			
 		}else if (categeor_name.equals("newstitle")) {
 			//±êÌâËÑË÷
 			ArrayList<News> news = searchDao.SearchNewsByTitle(search_content);
 			HttpSession session = request.getSession();
 			session.setAttribute("SearchResult", news);
-			response.sendRedirect("news-admin/searchresult.jsp");
+			response.sendRedirect("searchresult.jsp");
 		}
 	}
 
