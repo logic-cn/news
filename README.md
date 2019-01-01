@@ -13,3 +13,6 @@
 
 ![20181228213944](https://github.com/Contacted/news/blob/master/img-folder/20181228213944.png)
 
+新闻前端页面：
+
+![20181231164441](https://github.com/Contacted/news/blob/master/img-folder/20181231164441.png)
